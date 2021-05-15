@@ -1,6 +1,6 @@
 let timeDisplayEl = $('#currentDay');
 let DateTime = luxon.DateTime;
-let hourTimer = DateTime.now().toFormat('HH');
+let hourTimer;
 let nineAmEl = $('#9AM');
 let tenAmEl = $('#10AM');
 let elevenAmEl = $('#11AM');
@@ -27,11 +27,19 @@ function displayTime() {
 
 setInterval(displayTime, 1);
 
+function hourTimerFn() {
+    hourTimer = +DateTime.now().toFormat('HH');
+    // console.log(hourTimer);
+    // console.log(typeof hourTimer);
+};
+
+setInterval(hourTimerFn, 1);
+
 console.log(DateTime.now().toFormat('cccc, LLLL dd, HH:mm'));
 console.log("-------------------------------------------------");
 console.log(DateTime.now().toFormat('cccc, LLLL dd, hh:mm a'));
 console.log("-------------------------------------------------");
-console.log(hourTimer);
+
 
 function backgroundColor1() {
     if (hourTimer === 9) {
@@ -115,8 +123,8 @@ function backgroundColor5() {
 
 function backgroundColor6() {
     if (hourTimer === 14) {
-        twoPmEl.removeClass("past");
-        twoPmEl.removeClass("future");
+        // twoPmEl.removeClass("past");
+        // twoPmEl.removeClass("future");
         twoPmEl.addClass("present");
     } else if (hourTimer > 14) {
         twoPmEl.removeClass("present");
