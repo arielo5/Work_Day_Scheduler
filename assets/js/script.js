@@ -11,6 +11,15 @@ let threePmEl = $('#3PM');
 let fourPmEl = $('#4PM');
 let fivePmEl = $('#5PM');
 let saveBtEl = $("#btn");
+let inputEl1 = $('#9AM');
+let inputEl2 = $('#10AM');
+let inputEl3 = $('#11AM');
+let inputEl4 = $('#12PM');
+let inputEl5 = $('#1PM');
+let inputEl6 = $('#2PM');
+let inputEl7 = $('#3PM');
+let inputEl8 = $('#4PM');
+let inputEl9 = $('#5PM');
 
 function displayTime() {
     timeDisplayEl.text(DateTime.now().toFormat('cccc, LLLL dd, hh:mm a')); 
